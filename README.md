@@ -107,7 +107,7 @@ The program prints:
 
 ## Example Output (using A2data2.dat)
 ```
-===== Simulation Results =====
+  Simulation Results 
 Throughput (passengers processed): 100
 Functional Time (last passenger exits): 523
 

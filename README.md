@@ -1,81 +1,42 @@
 # CSCI203  Assignment 2 - Part B -Programming
-Queueing Simulation: Boarding Servers + Loading-Desk Servers
 
 
-## Program Description
-This program simulates a two-stage service system:
+## Overview
+This program simulates passenger processing through **two stages**:
 
-Stage 1 (Total Queue -> Boarding Servers):
-- Each passenger arrives and joins the Total Queue.
-- The next available Boarding Server takes the next passenger (FCFS).
-- Boarding takes the passenger’s boarding_time.
+1. **Total Queue → Boarding Servers**
+2. **Loading Queue → Loading-Desk Servers**
 
-Stage 2 (Loading Queue -> Loading-Desk Servers):
-- After boarding finishes, the passenger joins the Loading Queue.
-- The next available Loading-Desk Server takes the next passenger (FCFS).
-- Loading takes the passenger’s loading_time.
+Passengers arrive over time (FCFS order). After finishing boarding, they join the loading queue.  
+The program calculates throughput, functional time, average waiting times, maximum queue lengths, and server idle times.
 
-The program then outputs:
-- Throughput (total passengers processed)
-- Functional time (time when the last passenger exits the system)
-- Processing statistics (average time in system, average wait in each queue)
-- Queue analysis (maximum queue length for Total Queue and Loading Queue)
-- Server efficiency (total idle time per server)
+---
 
-##  Files Included
-Tree.py        : Main Python program (simulation + statistics).
-A2data2.dat    : Sample input data file (provided).
+## Files
+- `Tree.py` – main Python program (simulation + statistics)
+- `A2data2.dat` – example input data file
 
-## Input File Format (.dat)
-Line 1:
-  S L
-  where S = number of Boarding Servers
-        L = number of Loading-Desk Servers
+---
 
-Next lines (one passenger per line):
-  arrival_time boarding_time loading_time
+## Requirements
+- Python 3 (recommended: Python 3.8+)
+- Uses only standard libraries: `sys`, `dataclasses`, `collections`, `typing`
 
-End of file marker:
-  0 0 0
+---
 
 ## How to Run 
 Open a terminal/command prompt in the folder containing Tree.py and the .dat file.
 
 Mac / Linux:
-  python3 Tree.py A2data2.dat
+  `python3 Tree.py A2data2.dat`
 
 Windows (PowerShell / CMD):
-  py Tree.py A2data2.dat
-  (or: python Tree.py A2data2.dat)
+ ` py Tree.py A2data2.dat`
+  `(or: python Tree.py A2data2.dat)`
 
 To run with another input file:
-  python3 Tree.py <yourfile.dat>
+ ` python3 Tree.py <yourfile.dat>`
 
-## Ouput 
-The program prints results to the terminal, including:
-- Throughput (passengers processed)
-- Functional Time (last passenger exits)
-- Average time in system
-- Average wait in Total Queue
-- Average wait in Loading Queue
-- Maximum Total Queue length
-- Maximum Loading Queue length
-- Total idle time for each Boarding Server
-- Total idle time for each Loading-Desk Server
+or 
+`python Tree.py A2data2.dat`
 
-## Expected Result for A2data2.dat (for checking)
-When running:
-  python3 Tree.py A2data2.dat
-
-Expected key values:
-- Throughput: 100
-- Functional Time: 523
-- Avg time in system: 139.34
-- Avg wait in Total Queue: 111.40
-- Avg wait in Loading Queue: 9.06
-- Max Total Queue length: 49
-- Max Loading Queue length: 7
-- Boarding idle times: 45, 42
-- Loading-desk idle times: 57, 60
-
-##

@@ -38,7 +38,6 @@ Windows (PowerShell / CMD):
 
  ``` 
   py Tree.py A2data2.dat
-  
   (or: python Tree.py A2data2.dat)
 ```
 
@@ -53,3 +52,55 @@ or
 
 ```python Tree.py A2data2.dat```
 
+## Input file Format
+
+The data file must follow this structure:
+
+## Line 1:
+```
+S L
+```
+
+- S = number of Boarding Servers
+- L = number of Loading-Desk Servers
+
+### Next lines (one passenger per line):
+```
+arrival_time boarding_time loading_time
+```
+### End of file marker:
+```
+0 0 0
+```
+
+Example:
+```
+2 2
+0 6 5
+2 4 3
+...
+0 0 0
+```
+
+
+## Output (What the program prints)
+
+The program prints:
+
+  - Throughput (number of passengers processed)
+
+  - Functional Time (time when the last passenger finishes loading)
+
+  - Average time in system
+
+  - Average wait in Total Queue
+
+  - Average wait in Loading Queue
+
+  - Maximum Total Queue length
+
+  - Maximum Loading Queue length
+
+  - Idle time for each Boarding Server
+
+  - Idle time for each Loading-Desk Server

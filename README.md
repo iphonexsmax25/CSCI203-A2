@@ -2,9 +2,13 @@
 Queueing Simulation: Boarding Servers + Loading-Desk Servers
 
 Student: Isaac Lim King Ming
+
 Student ID: 1137906
+
 Tutor/Lab: T02F
+
 Submission Date: 14/2/2026
+
 Language: Python 
 
 ## Program Description
@@ -67,3 +71,20 @@ The program prints results to the terminal, including:
 - Maximum Loading Queue length
 - Total idle time for each Boarding Server
 - Total idle time for each Loading-Desk Server
+
+## Expected Result for A2data2.dat (for checking)
+When running:
+  python3 Tree.py A2data2.dat
+
+Expected key values:
+- Throughput: 100
+- Functional Time: 523
+- Avg time in system: 139.34
+- Avg wait in Total Queue: 111.40
+- Avg wait in Loading Queue: 9.06
+- Max Total Queue length: 49
+- Max Loading Queue length: 7
+- Boarding idle times: 45, 42
+- Loading-desk idle times: 57, 60
+
+##

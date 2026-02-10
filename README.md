@@ -28,15 +28,19 @@ The program calculates throughput, functional time, average waiting times, maxim
 Open a terminal/command prompt in the folder containing Tree.py and the .dat file.
 
 Mac / Linux:
-  `python3 Tree.py A2data2.dat`
+
+  ```python3 Tree.py A2data2.dat```
 
 Windows (PowerShell / CMD):
- ` py Tree.py A2data2.dat`
-  `(or: python Tree.py A2data2.dat)`
+
+ ``` py Tree.py A2data2.dat```
+  ```(or: python Tree.py A2data2.dat)```
 
 To run with another input file:
- ` python3 Tree.py <yourfile.dat>`
+
+ ``` python3 Tree.py <yourfile.dat>```
 
 or 
-`python Tree.py A2data2.dat`
+
+```python Tree.py A2data2.dat```
 

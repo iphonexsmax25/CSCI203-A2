@@ -104,3 +104,63 @@ The program prints:
   - Idle time for each Boarding Server
 
   - Idle time for each Loading-Desk Server
+
+## Example Output (using A2data2.dat)
+```
+===== Simulation Results =====
+Throughput (passengers processed): 100
+Functional Time (last passenger exits): 523
+
+Processing Statistics:
+  Average time in system: 139.34
+  Average wait in Total Queue: 111.40
+  Average wait in Loading Queue: 9.06
+
+Queue Analysis:
+  Max Total Queue length: 49
+  Max Loading Queue length: 7
+
+Server Efficiency (Idle Time):
+  Boarding Server 1: 45
+  Boarding Server 2: 42
+  Loading-Desk Server 1: 57
+  Loading-Desk Server 2: 60
+
+```
+## How the Program Works (Simple Explanation)
+
+### Data Reading
+- `read_data(path)` reads:
+  - first line: `S L`
+  - remaining lines: passenger data until `0 0 0`
+- Each passenger is stored in a `Passenger` dataclass.
+
+### Stage 1: Boarding (Total Queue)
+- Uses FCFS (First Come First Served).
+- Each passenger starts boarding when:
+  - they have arrived **AND**
+  - a boarding server becomes free
+- `schedule_fcfs_multi_server()` assigns each passenger to the earliest available server.
+
+### Stage 2: Loading (Loading Queue)
+- Passengers can only enter the loading queue after they finish boarding.
+- So stage 2 “arrival time” = `end_board`.
+- The program sorts passengers by `end_board` time (and `PID` to break ties) to maintain correct FCFS order.
+
+### Queue Length Calculation
+- `max_queue_length()` computes the maximum number waiting by tracking:
+  - arrivals into the queue
+  - starts of service (which remove people from the waiting queue)
+
+### Server Idle Time
+- Idle time is counted as:
+  - gaps between jobs, plus
+  - time from server’s last job end until the overall functional time
+
+## Notes / Assumptions
+
+  - Times are treated as integers.
+
+  - FCFS order is preserved.
+
+  - If multiple events happen at the same time, the queue length calculation updates arrivals and service-starts at the same timestamp to avoid artificial spikes.

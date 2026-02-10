@@ -139,7 +139,7 @@ def main():
     idle2_total = [idle2[i] + max(0, functional_time - free2[i]) for i in range(L)]
 
     #  Print results 
-    print("===== Simulation Results =====")
+    print("Simulation Results ")
     print(f"Throughput (passengers processed): {throughput}")
     print(f"Functional Time (last passenger exits): {functional_time}")
     print()

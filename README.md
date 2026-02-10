@@ -1,15 +1,6 @@
 # CSCI203  Assignment 2 - Part B -Programming
 Queueing Simulation: Boarding Servers + Loading-Desk Servers
 
-Student: Isaac Lim King Ming
-
-Student ID: 1137906
-
-Tutor/Lab: T02F
-
-Submission Date: 14/2/2026
-
-Language: Python 
 
 ## Program Description
 This program simulates a two-stage service system:

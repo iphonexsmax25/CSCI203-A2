@@ -31,13 +31,14 @@ Mac / Linux:
 
   ```
   python3 Tree.py A2data2.dat
-  
+
   ```
 
 Windows (PowerShell / CMD):
 
  ``` 
- py Tree.py A2data2.dat
+  py Tree.py A2data2.dat
+  
   (or: python Tree.py A2data2.dat)
 ```
 
